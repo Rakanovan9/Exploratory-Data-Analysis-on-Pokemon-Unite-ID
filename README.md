@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/34fabf17-ce75-4934-9565-de3e3d004be3)# Exploratory Data Analysis on Pokemon Unite Dataset
+# Exploratory Data Analysis on Pokemon Unite Dataset
 My first attempt at EDA on Pokemon Unite Stats, which cover
 
 0. Loading The Data
