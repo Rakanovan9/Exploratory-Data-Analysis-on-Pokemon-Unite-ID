@@ -141,5 +141,31 @@ So we sum up Offense, Endurance, Mobility, Scoring, and Support and use `axis=1`
 the new dataset should look like this
 ![image](https://github.com/user-attachments/assets/285126dd-4c01-4fd7-be00-2a4c4eda1d60)
 
+Another example of filtering by Range or Melee column
+```py
+df_melee = df[df['Ranged_or_Melee'] == "Melee"]
+df_ranged = df[df['Ranged_or_Melee'] == "Ranged"]
+```
+
+## 9. Making a Box Plot
+Now into the visualization.
+
+```py
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='UsageDifficulty', y='Total Stats', data=df)
+plt.title('Comparison of Total Stats by Usage Difficulty')
+plt.xlabel('UsageDifficulty')
+plt.ylabel('Total Stats')
+plt.show()
+```
+
+
+`figure(figsize=(10, 6))`: Sets the canvas size to 10x6 for the visualization.
+`sns.boxplot(x='UsageDifficulty', y='Total Stats', data=df)`: Creates a boxplot comparing 'Total Stats' across different 'UsageDifficulty' categories using the dataset `df`.
+`title('Comparison of Total Stats by Usage Difficulty')`: Adds a title at the top center of the visualization.
+`xlabel('UsageDifficulty')`: Labels the x-axis as 'UsageDifficulty'.
+`ylabel('Total Stats')`: Labels the y-axis as 'Total Stats'.
+`show()`: Displays the final product of the visualization.
+
 
 
