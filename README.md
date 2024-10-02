@@ -161,11 +161,46 @@ plt.show()
 
 
 `figure(figsize=(10, 6))`: Sets the canvas size to 10x6 for the visualization.
+
 `sns.boxplot(x='UsageDifficulty', y='Total Stats', data=df)`: Creates a boxplot comparing 'Total Stats' across different 'UsageDifficulty' categories using the dataset `df`.
+
 `title('Comparison of Total Stats by Usage Difficulty')`: Adds a title at the top center of the visualization.
+
 `xlabel('UsageDifficulty')`: Labels the x-axis as 'UsageDifficulty'.
+
 `ylabel('Total Stats')`: Labels the y-axis as 'Total Stats'.
+
 `show()`: Displays the final product of the visualization.
+
+![image](https://github.com/user-attachments/assets/483214ff-8ec9-40d7-9ffd-b643a8e120fa)
+
+
+## 10. Correlation
+Now into the last step, to see if there's any correlation between data.
+
+```py
+correlation_matrix = df[['Offense', 'Endurance', 'Mobility', 'Scoring', 'Support', 'Total Stats']].corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
+
+
+plt.title('Correlation Matrix')
+```
+
+`df[['Offense', 'Endurance', 'Mobility', 'Scoring', 'Support', 'Total Stats']].corr()`: Calculates the correlation matrix for the selected columns.
+
+`figure(figsize=(10, 8))`: Sets the canvas size to 10x8 for the visualization.
+
+`sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)`: Creates a heatmap of the correlation matrix with annotations and uses the 'coolwarm' color scheme. Line widths are set to 0.5 for separating cells.
+
+`title('Correlation Matrix')`: Adds a title at the top center of the visualization.
+
+![image](https://github.com/user-attachments/assets/18efa5e8-5ce5-449f-96fe-73d01ae07773)
+
+High Correlation (close to 1 or -1): Indicates a strong Correlation (positive or negative) between two variables.
+
+Low Correlation (close to 0): Indicates little to no Correlation between the variables.
 
 
 
