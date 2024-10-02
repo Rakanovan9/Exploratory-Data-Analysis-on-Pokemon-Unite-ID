@@ -1,4 +1,4 @@
-# Exploratory Data Analysis on Pokemon Unite Dataset
+![image](https://github.com/user-attachments/assets/34fabf17-ce75-4934-9565-de3e3d004be3)# Exploratory Data Analysis on Pokemon Unite Dataset
 My first attempt at EDA on Pokemon Unite Stats, which cover
 
 0. Loading The Data
@@ -9,8 +9,9 @@ My first attempt at EDA on Pokemon Unite Stats, which cover
 5. Replacing Null Values (If Found)
 6. Replacing Null Values (If Found)
 7. Finding out data types from the dataset to ease the process
-8. Making a Box Plot
-9. Correlation
+8. Filtering Data
+9. Making a Box Plot
+10. Correlation
 
 ## 0. Loading The Data
 ![image](https://github.com/user-attachments/assets/4fb880f7-b1cd-4be5-b11e-14bbf7cad966)
@@ -91,4 +92,54 @@ plt.show()
 
 `show()` Displays the final visualization.
 ![image](https://github.com/user-attachments/assets/4f161895-ff18-4bc1-858a-f29b20445eee)
+
+## 4. Finding Null Values
+Finding missing or Null Values from the dataset is mandatory for EDA because we need clear and intact data without any missing values.
+
+```py
+df_null = df.isnull().sum()
+print("Amount of Missing Vales found in data")
+df_null
+```
+
+`isnull()` decides if the data is missing or empty.
+`sum()` add up the entire array, row, or list.
+![image](https://github.com/user-attachments/assets/3efc0c6b-eef1-4551-9402-00240f9f98cb)
+
+As we can see here. There's no Missing Data we can assume that our data is fully intact and we can skip to Number 7
+
+## 7. Finding out data types from the dataset to ease the process
+Before we make the visualization we need to figure out what are the data type that's available on the dataset. We can figure that out by using this `dtypes`
+```py
+df.dtypes
+```
+![image](https://github.com/user-attachments/assets/7a99bd70-1e5c-4ea2-9db8-f29b6e7755e1)
+
+## 8. Filtering Data
+This part is required to filter out the unnecessary data that will clog up the visualization.
+
+We will start filtering it by UsageDifficlty
+```py
+df_usagedifficulty_Novice= df[df['UsageDifficulty'] == "Insert Difficulty"]
+print("Amount of Pokemon that has the Usage Difficulty of Insert Difficulty :",len(df_usagedifficulty_Novice))
+df_usagedifficulty_Novice.head()
+```
+Since there are only 3 Usage Difficulty available it's Novice, Intermediate, and Expert. We can just replace the "Insert Difficulty" as the Difficulty stated earlier
+
+![image](https://github.com/user-attachments/assets/fcf0b76b-2522-41e5-af9c-0344665f6368)
+
+Here's an example output of the filtered dataset UsageDifficulty Novice.
+
+Before we go for the visualization part. we need to add a column. It's total stats
+```py
+df['Total Stats'] = df[['Offense', 'Endurance', 'Mobility', 'Scoring', 'Support']].sum(axis=1)
+df.head()
+```
+
+So we sum up Offense, Endurance, Mobility, Scoring, and Support and use `axis=1` to the new column on the right part of the dataset.
+
+the new dataset should look like this
+![image](https://github.com/user-attachments/assets/285126dd-4c01-4fd7-be00-2a4c4eda1d60)
+
+
 
