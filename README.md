@@ -1,7 +1,3 @@
-Sure! Here's the translation into Bahasa Indonesia, including the images as requested.
-
----
-
 # Analisis Data Eksplorasi pada Dataset Pokemon Unite
 Usaha pertama saya dalam EDA pada Statistik Pokemon Unite, yang mencakup
 
